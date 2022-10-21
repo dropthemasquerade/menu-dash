@@ -28,7 +28,7 @@ function App() {
             <Route path="/desert" element={<DesertFood />} />
             <Route path="/help" element={<Help />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/coming soon" element={<ComingSoon />} />
+            <Route path="/comingsoon" element={<ComingSoon />} />
             <Route path="/chat" element={<Chat />} />
             <Route path="/modal" element={<Modal />} />
             <Route path="/update/:id" element={<Modal />} />

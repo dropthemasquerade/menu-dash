@@ -9,7 +9,7 @@ function TopSect() {
     <div className="top-section">
       <div className="user-info">
         <div className="user-img">
-          <img src={user} alt="user-image" />
+          <img src={user} alt="user" />
         </div>
         <p className="user-name">Welcome👋</p>
 

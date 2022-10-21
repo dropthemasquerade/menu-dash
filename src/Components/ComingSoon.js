@@ -29,12 +29,6 @@ const ComingSoon = () => {
         const timer = setTimeout(() => {
             setTimeLeft(calculateTimeLeft());
         }, 1000);
-    });
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setTimeLeft(calculateTimeLeft());
-        }, 1000);
 
         return () => clearTimeout(timer);
     });
@@ -53,7 +47,6 @@ const ComingSoon = () => {
     });
 
 
-
     return (
         <>
 
@@ -66,7 +59,7 @@ const ComingSoon = () => {
                     <p className="top-p">Grand opening of Prime Cuisine Restaurant. Huge discounts for first 100 reservations.</p>
                     <hr/>
                     <p className="bottom-p">Coming soon in: {timerComponents.length ? timerComponents : <span>We're Open! 🔥</span>}</p>
-
+                    <p className="bottom-p">Launching: December {year}</p>
                 </div>
                 <div className="bottom"> </div>
             </div>
