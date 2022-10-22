@@ -175,6 +175,7 @@
 .foodcontainer .right-side .payment .price article .pay {
   display: flex;
   justify-content: space-between;
+  /* justify-content: space-around; */
   flex-direction: row;
   min-width: 240px;
   padding: 5px 5px;
