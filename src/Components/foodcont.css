@@ -178,6 +178,7 @@
   flex-direction: row;
   min-width: 240px;
   padding: 5px 5px;
+  min-width: 300px;
   align-items: center;
 }
 
