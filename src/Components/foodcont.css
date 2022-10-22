@@ -179,18 +179,12 @@
   flex-direction: row;
   min-width: 240px;
   padding: 5px 5px;
-  min-width: 300px;
+  min-width: 320px;
   align-items: center;
 }
 
-.foodcontainer .right-side .payment .price article .pay .small-img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-}
-
 .foodcontainer .right-side .payment .price article .pay .order-input {
-  padding: 10px 7px;
+  padding: 10px 15px;
   background: #252837;
   color: white;
   border-radius: 7px;
