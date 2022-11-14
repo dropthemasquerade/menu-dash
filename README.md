@@ -22,6 +22,10 @@ This is a food ordering web application. It grants user access to their dashboar
 - React Toastify
 
 
+## Developer
+
+Developed by Juliet Oma
+
 
 ## Sidebar Navigation 🔍
 
