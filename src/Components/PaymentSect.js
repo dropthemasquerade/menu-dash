@@ -1,12 +1,23 @@
 import React from "react";
 import { FaTrashAlt } from "react-icons/fa";
 
-
+const SampleData = [
+  {
+    "name": "螺蛳粉",
+    "number": 3,
+    "price": 12.90,
+    "product_id": "p001"
+  },
+  {
+    "name": "木薯羹",
+    "number": 2,
+    "price": 22.90,
+    "product_id": "p001"
+  }
+]
 
 function PaymentSect() {
-
   return (
-    <>
       <div className="payment">
         <div className="name">
           <h4>品项</h4>
@@ -14,65 +25,32 @@ function PaymentSect() {
           <p>价格</p>
         </div>
 
-        <div className="price">
-
-
-          <article>
-            <div className="pay">
-              <div>
-                <b>Desert 2</b>
-                <p>$1.50</p>
+      <div className="price">
+        {
+         SampleData.map(m => {
+              return (<article>
+              <div className="pay">
+                <div>
+                  <b>{m.name}</b>
+                  <p>{m.price}</p>
+                </div>
+              
+                <p className="qty-box">{m.number}</p>
+                <p>{ m.price * m.number}</p>
               </div>
-              <p className="qty-box">1</p>
-              <p>$1.50</p>
-            </div>
-
-            <div className="pay">
-              <input className="order-input" placeholder="备注" ></input>
-              <span className="trash-box" title="移除"><FaTrashAlt /></span>
-            </div>
-          </article>
-
-
-          <article>
-            <div className="pay">
-              <div>
-                <b>African 3</b>
-                <p>$2.78</p>
-              </div>
-              <p className="qty-box">2</p>
-              <p>$8.34</p>
-            </div>
-
-            <div className="pay">
-              <input className="order-input" placeholder="备注" ></input>
-              <span className="trash-box" title="移出"><FaTrashAlt /></span>
-            </div>
-          </article>
-
-
-
-          <article>
-            <div className="pay">
-              <div>
-                <b>Chinese 2</b>
-                <p>$2.50</p>
-              </div>
-              <p className="qty-box">2</p>
-              <p>$5.00</p>
-            </div>
-
-            <div className="pay">
-              <input className="order-input" placeholder="备注" ></input>
-              <span className="trash-box" title="移出"><FaTrashAlt /></span>
-            </div>
-          </article>
-
+    
+              <div className="pay">
+                <input className="order-input" placeholder="备注" ></input>
+                <FaTrashAlt color="red" />
+                </div>
+                </article>)
+            })
+          }
 
           <figure>
             <div className="last">
-              <p className="space">Discount</p>
-              <p>Total</p>
+              <p className="space">折扣</p>
+              <p>总价</p>
             </div>
             <div className="last">
               <p className="space">$0</p>
@@ -98,7 +76,6 @@ function PaymentSect() {
 
         </div>
       </div>
-    </>
   );
 }
 

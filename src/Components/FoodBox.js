@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const notify = () => {
   toast.success('添加成功', {
     position: "top-center",
-    autoClose: 1200,
+    autoClose: 500,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -18,10 +18,6 @@ const notify = () => {
 
 
 function FoodBox({ imgSrc, title, price }) {
-
-  // const handleClick = async () => {
-  //   alert("Item has been added to cart");
-  // };
 
   return (
     <div className="details">

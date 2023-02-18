@@ -14,7 +14,7 @@ function Desert() {
                     <div className="cards">
                         <div className="all">
                             <div className="varieties">
-                            <Link to="/" className="var-btn">
+                                <Link to="/" className="var-btn">
                                 推荐
                                 </Link>
                                 <Link to="/african" className="var-btn">
