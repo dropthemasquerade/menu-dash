@@ -4,9 +4,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const notify = () => {
-  toast.success('Item has been added to cart', {
+  toast.success('添加成功', {
     position: "top-center",
-    autoClose: 3000,
+    autoClose: 1200,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
