@@ -33,9 +33,9 @@ function FoodBox({ imgSrc, title, price }) {
       <div className="food-details">
         <div>
           <p>
-            Price: {price}
+            单价: {price}
           </p>
-          <p>Available</p>
+          <p>可用</p>
         </div>
       </div>
 
@@ -43,7 +43,7 @@ function FoodBox({ imgSrc, title, price }) {
         {/* <button onClick={handleClick} className="btn">
           Add to cart
         </button> */}
-        <button onClick={notify} className="btn">Add to cart</button>
+        <button onClick={notify} className="btn">加入购物车</button>
       </div>
       <ToastContainer />
     </div>

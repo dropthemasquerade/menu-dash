@@ -19,19 +19,28 @@ function FoodCont() {
             <div className="all">
               <div className="varieties">
                 <Link to="/" className="var-btn">
-                  All
+                  推荐
                 </Link>
                 <Link to="/african" className="var-btn">
-                  African
+                  饮料
                 </Link>
                 <Link to="/chinese" className="var-btn">
-                  Chinese
+                  分类
                 </Link>
                 <Link to="/italian" className="var-btn">
-                  Italian
+                  套餐
                 </Link>
                 <Link to="/desert" className="var-btn">
-                  Desert
+                  卤菜
+                </Link>
+                <Link to="/desert" className="var-btn">
+                  配菜
+                </Link>
+                <Link to="/desert" className="var-btn">
+                  特色
+                </Link>
+                <Link to="/desert" className="var-btn">
+                  饮料
                 </Link>
               </div>
             </div>

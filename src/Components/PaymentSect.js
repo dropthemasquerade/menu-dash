@@ -9,9 +9,9 @@ function PaymentSect() {
     <>
       <div className="payment">
         <div className="name">
-          <h4>Item</h4>
-          <p>Qty</p>
-          <p>Price</p>
+          <h4>品项</h4>
+          <p>数量</p>
+          <p>价格</p>
         </div>
 
         <div className="price">
@@ -28,8 +28,8 @@ function PaymentSect() {
             </div>
 
             <div className="pay">
-              <input className="order-input" placeholder="Input Order Note" ></input>
-              <span className="trash-box" title="delete"><FaTrashAlt /></span>
+              <input className="order-input" placeholder="备注" ></input>
+              <span className="trash-box" title="移除"><FaTrashAlt /></span>
             </div>
           </article>
 
@@ -45,8 +45,8 @@ function PaymentSect() {
             </div>
 
             <div className="pay">
-              <input className="order-input" placeholder="Input Order Note" ></input>
-              <span className="trash-box" title="delete"><FaTrashAlt /></span>
+              <input className="order-input" placeholder="备注" ></input>
+              <span className="trash-box" title="移出"><FaTrashAlt /></span>
             </div>
           </article>
 
@@ -63,8 +63,8 @@ function PaymentSect() {
             </div>
 
             <div className="pay">
-              <input className="order-input" placeholder="Input Order Note" ></input>
-              <span className="trash-box" title="delete"><FaTrashAlt /></span>
+              <input className="order-input" placeholder="备注" ></input>
+              <span className="trash-box" title="移出"><FaTrashAlt /></span>
             </div>
           </article>
 
