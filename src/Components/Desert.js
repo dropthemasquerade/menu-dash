@@ -36,7 +36,7 @@ function Desert() {
     const fetchData2 = async (data) => {
         try {
             // 提交到服务器
-            axios.get(apiHost + "/v1/client/pos/product", data,{ withCredentials: false }).then(
+            axios.get(apiHost + "/v1/client/pos/product?categoryId="+data.category, data,{ withCredentials: false }).then(
                 res => {
                     console.log("progress return  ==>", res.data)
                     const resp = res.data
@@ -49,6 +49,14 @@ function Desert() {
         } catch (error) {
             console.error(error);
         }
+    }
+
+    const onCategoryChange = (e) =>  {
+        console.log("target->", e.target.dataset.id)
+        const reqData = {
+            "category": e.target.dataset.id
+        }
+        fetchData2(reqData)
     }
 
     // Similar to componentDidMount and componentDidUpdate:
@@ -76,7 +84,7 @@ function Desert() {
                             {
                                 queryData.map(m => {
                                     return (
-                                        <Link to={m.link} className="var-btn" key={m.id}>
+                                        <Link to="/desert" value={m.id} onClick={onCategoryChange} className="var-btn" key={m.id} data-id={m.id}>
                                             {m.name}
                                         </Link>
                                     )

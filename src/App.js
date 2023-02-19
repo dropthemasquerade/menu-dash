@@ -22,9 +22,9 @@ function App() {
           {/* <Container /> */}
           <Routes>
             <Route path="/" element={<Container />} />
-            <Route path="/african" element={<AfricanFood />} />
+            {/* <Route path="/african" element={<AfricanFood />} />
             <Route path="/chinese" element={<ChineseFood />} />
-            <Route path="/italian" element={<ItalianFood />} />
+            <Route path="/italian" element={<ItalianFood />} /> */}
             <Route path="/desert" element={<DesertFood />} />
             <Route path="/help" element={<Help />} />
             <Route path="/profile" element={<Profile />} />
