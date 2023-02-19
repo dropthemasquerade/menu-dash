@@ -6,32 +6,21 @@ import axios from "axios";
 const apiHost = ""; // 保持与页面服务器同一地址（nginx代理)
 
 
-// const SampleData = [
-//   {
-//     "name": "螺蛳粉",
-//     "number": 3,
-//     "price": 12.90,
-//     "product_id": "p001"
-//   },
-//   {
-//     "name": "木薯羹",
-//     "number": 2,
-//     "price": 22.90,
-//     "product_id": "p002"
-//   }
-// ]
 
 function PaymentSect() {
-  const [cartList, setCartData] = useState([]);
+
+  const [cartItemList, setCartItemList] = useState([]);
+  const [cartInfo, setCartInfo] = useState({"discount": 0, "total": 0});
 
   const fetchData = async (data) => {
     try {
         // 提交到服务器
         axios.get(apiHost + "/v1/client/pos/cart?cartId=" + data.cartId,{ withCredentials: false }).then(
             res => {
-                console.log("progress return  ==>", res.data)
-                const resp = res.data
-                setCartData(resp.cart_item_list)
+              console.log("progress return  ==>", res.data)
+              const resp = res.data
+              setCartItemList(resp.cart_item_list)
+              setCartInfo(resp.sumary)
             }
         ).catch(err => {
             console.log("err is->", err)
@@ -64,7 +53,7 @@ function PaymentSect() {
 
       <div className="price">
         {
-         cartList.map(m => {
+         cartItemList.map(m => {
               return (<article key={m.product_id}>
               <div className="pay">
                 <div>
@@ -90,8 +79,8 @@ function PaymentSect() {
               <p>总价</p>
             </div>
             <div className="last">
-              <p className="space">$0</p>
-              <p>$14.84</p>
+              <p className="space">¥{cartInfo.discount}</p>
+              <p>¥{cartInfo.total}</p>
             </div>
           </figure>
 
