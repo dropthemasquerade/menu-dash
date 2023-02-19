@@ -11,14 +11,14 @@ function TopSect() {
         <div className="user-img">
           <img src={user} alt="user" />
         </div>
-        <p className="user-name">Welcome👋</p>
+        <p className="user-name">欢迎👋 天天</p>
 
       </div>
 
       
 
       <div className="search-box">
-        <input type="text" placeholder="Search food..." />
+        <input type="text" placeholder="搜索..." />
         <i>
           <FaSearch />
         </i>

@@ -1,6 +1,5 @@
 import "./App.css";
 import SideBar from "./Components/SideBar";
-// import "./Components/Container.jsxx";
 
 import Menu from "./Components/Menu";
 import Help from "./Components/Help";
@@ -17,9 +16,7 @@ function App() {
 
         <Router>
           <SideBar />
-          {/* <Container /> */}
           <Routes>
-            {/* <Route path="/" element={<Container />} /> */}
             <Route path="/" element={<Menu />} />
             <Route path="/help" element={<Help />} />
             <Route path="/profile" element={<Profile />} />
