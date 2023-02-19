@@ -1,5 +1,7 @@
 import React from "react";
+
 import "./foodcont.css";
+import "./container.css";
 import FoodBox from "./FoodBox";
 import PaymentSect from "./PaymentSect";
 import { Link } from "react-router-dom";
@@ -9,7 +11,7 @@ import axios from "axios";
 
 const apiHost = ""; // 保持与页面服务器同一地址（nginx代理)
 
-function Desert() {
+function MenuShow() {
 
     const [queryData, setQueryData] = useState([]);
     const [queryProduct, setProductData] = useState([]);
@@ -84,7 +86,7 @@ function Desert() {
                             {
                                 queryData.map(m => {
                                     return (
-                                        <Link to="/desert" value={m.id} onClick={onCategoryChange} className="var-btn" key={m.id} data-id={m.id}>
+                                        <Link to="/" value={m.id} onClick={onCategoryChange} className="var-btn" key={m.id} data-id={m.id}>
                                             {m.name}
                                         </Link>
                                     )
@@ -112,4 +114,4 @@ function Desert() {
     );
 }
 
-export default Desert;
+export default MenuShow;

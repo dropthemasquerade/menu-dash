@@ -1,10 +1,8 @@
 import "./App.css";
 import SideBar from "./Components/SideBar";
-import Container from "./Components/Container";
-import AfricanFood from "./Components/AfricanFood";
-import ChineseFood from "./Components/ChineseFood";
-import ItalianFood from "./Components/ItalianFood";
-import DesertFood from "./Components/DesertFood";
+// import "./Components/Container.jsxx";
+
+import Menu from "./Components/Menu";
 import Help from "./Components/Help";
 import Profile from "./Components/Profile";
 import ComingSoon from "./Components/ComingSoon";
@@ -21,11 +19,8 @@ function App() {
           <SideBar />
           {/* <Container /> */}
           <Routes>
-            <Route path="/" element={<Container />} />
-            {/* <Route path="/african" element={<AfricanFood />} />
-            <Route path="/chinese" element={<ChineseFood />} />
-            <Route path="/italian" element={<ItalianFood />} /> */}
-            <Route path="/desert" element={<DesertFood />} />
+            {/* <Route path="/" element={<Container />} /> */}
+            <Route path="/" element={<Menu />} />
             <Route path="/help" element={<Help />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/comingsoon" element={<ComingSoon />} />

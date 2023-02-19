@@ -1,16 +1,16 @@
 import React from 'react';
 import TopSect from "./TopSect";
-import African from "./African";
+import MenuShow from "./MenuShow";
 
 
-const AfricanFood = () => {
+const Menu = () => {
     return (
         <>
             <div className="container">
                 <TopSect />
-                <African />
+                <MenuShow />
             </div></>
     )
 }
 
-export default AfricanFood
+export default Menu
