@@ -12,7 +12,7 @@ const SampleData = [
     "name": "木薯羹",
     "number": 2,
     "price": 22.90,
-    "product_id": "p001"
+    "product_id": "p002"
   }
 ]
 
@@ -28,7 +28,7 @@ function PaymentSect() {
       <div className="price">
         {
          SampleData.map(m => {
-              return (<article>
+              return (<article key={m.product_id}>
               <div className="pay">
                 <div>
                   <b>{m.name}</b>

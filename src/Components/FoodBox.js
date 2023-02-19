@@ -17,7 +17,7 @@ const notify = () => {
 }
 
 
-function FoodBox({ imgSrc, title, price }) {
+function FoodBox({ imgSrc, title, price, sku }) {
 
   return (
     <div className="details">
@@ -31,7 +31,7 @@ function FoodBox({ imgSrc, title, price }) {
           <p>
             单价: {price}
           </p>
-          <p>可用</p>
+          <p>库存: {sku}</p>
         </div>
       </div>
 

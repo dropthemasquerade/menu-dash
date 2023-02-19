@@ -76,7 +76,7 @@
 }
 
 .foodcontainer .left-side .cards main .details .details-img {
-  max-width: 100%;
+  max-width: 90%;
   object-fit: cover;
   object-position: center;
 }
@@ -284,7 +284,7 @@
 
 @media only screen and (min-width: 525px) and (max-width: 950px) {
   .foodcontainer {
-    height: calc(100% - 25px);
+    height: calc(100% - 55px);
   }
   .foodcontainer .left-side {
     width: calc(100% - 30%);
