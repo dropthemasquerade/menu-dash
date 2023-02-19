@@ -49,10 +49,44 @@
   margin: 0px 5px;
 }
 
+.varieties .var-btn-settle {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #F17E6C;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 10px;
+  margin: 0px 5px;
+}
+
+.varieties .var-btn-settle:hover, .varieties .var-btn-settle:focus {
+  background:#F17E6C;
+  border: none;
+  color:  white;
+}
+
+.varieties .var-btn-pay {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #302958;
+  border: 2px solid white;;
+  padding: 5px 15px;
+  border-radius: 10px;
+  margin: 0px 5px;
+}
+
 .varieties .var-btn:hover, .varieties .var-btn:focus {
   background: #F17E6C;
   border: none;
   color: white
+}
+
+.varieties .var-btn-pay:hover, .varieties .var-btn-pay:focus {
+  background:white;
+  border: none;
+  color: #F17E6C;
 }
 
 

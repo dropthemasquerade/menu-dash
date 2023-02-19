@@ -11,7 +11,7 @@ function TopSect() {
         <div className="user-img">
           <img src={user} alt="user" />
         </div>
-        <p className="user-name">欢迎👋 天天</p>
+        <p className="user-name">欢迎👋 A8 号桌</p>
 
       </div>
 

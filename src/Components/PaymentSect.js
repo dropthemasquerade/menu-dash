@@ -1,11 +1,34 @@
 import React from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios";
+
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 
 const apiHost = ""; // 保持与页面服务器同一地址（nginx代理)
 
+const PayMenthod = () => (
+  <div className="varieties">
+    <Link to="/wechatPay"  className="var-btn-pay">收款码</Link>
+    <Link to="/aliPay" className="var-btn-pay">主扫</Link>
+    <Link to="/wechatPay"  className="var-btn-pay">其它</Link>
+  </div>
+);
 
+const showPayMethod = () => {
+  toast.success(PayMenthod, {
+    position: "bottom-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
+  // toast.info(PayMenthod);
+}
 
 function PaymentSect() {
 
@@ -46,11 +69,10 @@ function PaymentSect() {
   return (
       <div className="payment">
         <div className="name">
-          <h4>品项</h4>
+          <h4>品名</h4>
           <p>数量</p>
-          <p>价格</p>
+            <p>小计</p>
         </div>
-
       <div className="price">
         {
          cartItemList.map(m => {
@@ -58,9 +80,8 @@ function PaymentSect() {
               <div className="pay">
                 <div>
                   <b>{m.name}</b>
-                  <p>{m.price}</p>
+                    <p>{m.price}/{m.unit}</p>
                 </div>
-              
                 <p className="qty-box">{m.number}</p>
                 <p>{ m.price * m.number}</p>
               </div>
@@ -81,25 +102,13 @@ function PaymentSect() {
             <div className="last">
               <p className="space">¥{cartInfo.discount}</p>
               <p>¥{cartInfo.total}</p>
+          </div>
+        </figure>
+        
+          <div className="varieties">
+            <button onClick={showPayMethod} className="var-btn-settle">结算</button>
+              <ToastContainer />
             </div>
-          </figure>
-
-
-
-          {/* <figure>
-            <div className="last">
-              <p className="space">Discount</p>
-              <p>Sub-total</p>
-            </div>
-            <div className="last">
-              <p className="space">$0</p>
-              <p>{total()}</p>
-            </div>
-          </figure> */}
-
-
-
-
         </div>
       </div>
   );
