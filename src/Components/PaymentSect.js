@@ -27,7 +27,6 @@ const showPayMethod = () => {
     progress: undefined,
     theme: "light",
     });
-  // toast.info(PayMenthod);
 }
 
 function PaymentSect() {
@@ -54,17 +53,18 @@ function PaymentSect() {
     }
   }
 
-      // Similar to componentDidMount and componentDidUpdate:
-      useEffect(() => {
-        const data = {
-          "status": true, // 初始化状态为1
-          "cartId": "c001"
-        }
-        fetchData(data).then(r => {
-            console.log("sss")
-        })
-
-    }, []);
+  
+  // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+    const cartId = localStorage.getItem('CART_ID')
+      const data = {
+        "status": true, // 初始化状态为1
+        "cartId": cartId
+      }
+      fetchData(data).then(r => {
+          console.log("sss")
+      })
+  }, []);
 
   return (
       <div className="payment">

@@ -99,7 +99,7 @@ function MenuShow() {
                             {
                                 queryProduct.map(m => {
                                     return (
-                                        <FoodBox imgSrc={m.icon} title={m.name} price={m.price} key={m.id} sku={m.sku} />
+                                        <FoodBox imgSrc={m.icon} title={m.name} price={m.price} key={m.id} sku={m.sku} product_id={m.id} />
                                     )
                                 })
                             }
