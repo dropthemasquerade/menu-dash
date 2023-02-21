@@ -8,6 +8,7 @@ import ComingSoon from "./Components/ComingSoon";
 import Chat from "./Components/Chat";
 import Modal from "./Components/Modal";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SeatsShow from "./pages/Seats";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <SideBar />
           <Routes>
             <Route path="/" element={<Menu />} />
+            <Route path="/seat" element={<SeatsShow />} />
             <Route path="/help" element={<Help />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/comingsoon" element={<ComingSoon />} />

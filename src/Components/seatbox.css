@@ -1,0 +1,54 @@
+/* foodcont styling */
+.seatcontainer {
+    width: 100%;
+    height: calc(100% - 45px);
+    display: flex;
+    padding-top: 45px;
+}
+
+.seatcontainer .left-side {
+width: calc(100% - 10%);
+overflow-y: scroll;
+padding-left: 10px;
+transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.seatcontainer .left-side::-webkit-scrollbar {
+display: none;
+}
+
+
+.seatcontainer .left-side .cards {
+background: #252837;
+padding: 5px;
+box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+margin-top: 20px;
+border-radius: 10px;
+}
+
+
+/* foodbox styling */
+.seatcontainer .left-side .cards main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.seatcontainer .left-side .cards main .details {
+    background: #1F1D2B;
+    border-radius: 10px;
+    /* max-width: 260px; */
+    max-height: 300px;
+    max-width: 250px;
+    padding-bottom: 10px;
+    margin: 15px 15px 15px 15px;
+    overflow: hidden;
+  }
+
+  .seatcontainer .left-side .cards main .details .details-img {
+    max-width: 60%;
+    max-height: 60%;
+    object-fit: cover;
+    object-position: center;
+  }
