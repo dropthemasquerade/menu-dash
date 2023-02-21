@@ -8,52 +8,52 @@ const apiHost = ""; // 保持与页面服务器同一地址（nginx代理)
 
 
 
-const notifyAndSubmit = (e) => {
-  console.log("target->", e.target.dataset.id, e.target.dataset.name)
+function FoodBox({ imgSrc, title, price, sku, product_id, isClicked}) {
 
-  toast.success(e.target.dataset.name + '添加成功', {
-    position: "top-center",
-    autoClose: 500,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-  });
+  const notifyAndSubmit = (e) => {
+    console.log("target->", e.target.dataset.id, e.target.dataset.name)
   
-  // 提交数据
-  const data = {
-    "product_id": e.target.dataset.id,
+    toast.success(e.target.dataset.name + '添加成功', {
+      position: "top-center",
+      autoClose: 500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+    
+    // 提交数据
+    const data = {
+      "product_id": e.target.dataset.id,
+    }
+    submitToCart(data)
+    isClicked()
+  
   }
-  submitToCart(data)
-
-}
-
-// 
-const submitToCart = async (data) => {
-  // 当前的购物车id （可以切换购物车）
-  console.log("ready to submit -->", data)
-  const cartId = localStorage.getItem('CART_ID')
-  try {
-      // 提交到服务器
-      axios.post(apiHost + "/v1/client/pos/cart?cartId=" + cartId, data,{ withCredentials: false }).then(
-          res => {
-          console.log("progress return  ==>", res.data)
-          const rsp = res.data
-          localStorage.setItem('CART_ID', rsp.cart_id)
-          }
-      ).catch(err => {
-          console.log("err is->", err)
-      })
-
-  } catch (error) {
-      console.error(error);
+  
+  // 
+  const submitToCart = async (data) => {
+    // 当前的购物车id （可以切换购物车）
+    console.log("ready to submit -->", data)
+    const cartId = localStorage.getItem('CART_ID')
+    try {
+        // 提交到服务器
+        axios.post(apiHost + "/v1/client/pos/cart?cartId=" + cartId, data,{ withCredentials: false }).then(
+            res => {
+            console.log("progress return  ==>", res.data)
+            const rsp = res.data
+            localStorage.setItem('CART_ID', rsp.cart_id)
+            }
+        ).catch(err => {
+            console.log("err is->", err)
+        })
+  
+    } catch (error) {
+        console.error(error);
+    }
   }
-}
-
-
-function FoodBox({ imgSrc, title, price, sku, product_id}) {
 
   return (
     <div className="details">

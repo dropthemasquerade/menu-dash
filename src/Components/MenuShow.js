@@ -13,6 +13,7 @@ const apiHost = ""; // 保持与页面服务器同一地址（nginx代理)
 
 function MenuShow() {
 
+    const [updateCart, setUpdateCart] = useState(1);
     const [queryData, setQueryData] = useState([]);
     const [queryProduct, setProductData] = useState([]);
 
@@ -76,6 +77,11 @@ function MenuShow() {
 
     }, []);
 
+    const clickedForUpdate = (e) => {
+        console.log("clickedForUpdate-->", e)
+        setUpdateCart(Math.random() * 10000000000000000)
+      }
+    
     return (
         <>
             <div className="foodcontainer">
@@ -99,7 +105,7 @@ function MenuShow() {
                             {
                                 queryProduct.map(m => {
                                     return (
-                                        <FoodBox imgSrc={m.icon} title={m.name} price={m.price} key={m.id} sku={m.sku} product_id={m.id} />
+                                        <FoodBox imgSrc={m.icon} title={m.name} price={m.price} key={m.id} sku={m.sku} product_id={m.id} setUpdateCart={setUpdateCart} isClicked={clickedForUpdate} />
                                     )
                                 })
                             }
@@ -107,7 +113,7 @@ function MenuShow() {
                     </div>
                 </div>
                 <div className="right-side">
-                    <PaymentSect />
+                    <PaymentSect updateCart={updateCart} />
                 </div>
             </div>
         </>

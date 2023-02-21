@@ -29,10 +29,17 @@ const showPayMethod = () => {
     });
 }
 
-function PaymentSect() {
+function PaymentSect({updateCart}) {
 
+  const [cartChange, setCartChange] = useState(1);
   const [cartItemList, setCartItemList] = useState([]);
-  const [cartInfo, setCartInfo] = useState({"discount": 0, "total": 0});
+  const [cartInfo, setCartInfo] = useState({ "discount": 0, "total": 0 });
+  
+  const [countState, setCountState] = useState(updateCart);
+  // useEffect(() => {
+  //   setCountState(updateCart);
+  // }, [updateCart]);
+
 
   const fetchData = async (data) => {
     try {
@@ -53,6 +60,13 @@ function PaymentSect() {
     }
   }
 
+  // const updateCartAction = (e) => {
+  //   console.log("updateAction--->", e)
+  //   setCartChange(Math.random())
+  // }
+
+
+
   
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
@@ -64,18 +78,19 @@ function PaymentSect() {
       fetchData(data).then(r => {
           console.log("sss")
       })
-  }, []);
+      setCountState(updateCart);
+  }, [updateCart]);
 
   return (
       <div className="payment">
         <div className="name">
           <h4>品名</h4>
           <p>数量</p>
-            <p>小计</p>
+          <p>小计</p>
         </div>
       <div className="price">
         {
-         cartItemList.map(m => {
+         updateCart && cartItemList.map(m => {
               return (<article key={m.product_id}>
               <div className="pay">
                 <div>
@@ -83,7 +98,7 @@ function PaymentSect() {
                     <p>{m.price}/{m.unit}</p>
                 </div>
                 <p className="qty-box">{m.number}</p>
-                <p>{ m.price * m.number}</p>
+                <p>{ parseFloat((m.number * m.price).toFixed(2))}</p>
               </div>
     
               <div className="pay">
@@ -102,6 +117,12 @@ function PaymentSect() {
             <div className="last">
               <p className="space">¥{cartInfo.discount}</p>
               <p>¥{cartInfo.total}</p>
+          </div>
+        </figure>
+
+        <figure>
+            <div className="last">
+              <p>#{countState}</p>
           </div>
         </figure>
         
