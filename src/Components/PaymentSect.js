@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios";
 
-import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const apiHost = ""; // 保持与页面服务器同一地址（nginx代理)
 
@@ -54,6 +54,36 @@ function PaymentSect({updateCart}) {
     }
   }
 
+  const removeItemFromCart = async (data) => {
+    try {
+        // 提交到服务器
+        axios.delete(apiHost + "/v1/client/pos/cart/" + data.productId + "?cartId=" + data.cartId,{ withCredentials: false }).then(
+            res => {
+              console.log("progress return  ==>", res.data)
+              const resp = res.data
+              setCartItemList(resp.cart_item_list)
+              setCartInfo(resp.sumary)
+            }
+        ).catch(err => {
+            console.log("err is->", err)
+        })
+
+    } catch (error) {
+        console.error(error);
+    }
+  }
+
+  const onTrashClick = (e) => {
+    const cartId = localStorage.getItem('CART_ID')
+    const productId = e.target.dataset.productId
+      const data = {
+        "status": true, // 初始化状态为1
+        "cartId": cartId,
+        "productId": productId,
+      }
+    removeItemFromCart(data)
+  }
+
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     const cartId = localStorage.getItem('CART_ID')
@@ -89,7 +119,7 @@ function PaymentSect({updateCart}) {
     
               <div className="pay">
                 <input className="order-input" placeholder="备注" ></input>
-                <FaTrashAlt color="red" />
+                  <FaTrashAlt color="red" onClick={onTrashClick} data-productId={m.product_id} />
                 </div>
                 </article>)
             })
