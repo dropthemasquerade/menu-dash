@@ -30,16 +30,10 @@ const showPayMethod = () => {
 }
 
 function PaymentSect({updateCart}) {
-
-  const [cartChange, setCartChange] = useState(1);
   const [cartItemList, setCartItemList] = useState([]);
   const [cartInfo, setCartInfo] = useState({ "discount": 0, "total": 0 });
   
   const [countState, setCountState] = useState(updateCart);
-  // useEffect(() => {
-  //   setCountState(updateCart);
-  // }, [updateCart]);
-
 
   const fetchData = async (data) => {
     try {
@@ -60,14 +54,6 @@ function PaymentSect({updateCart}) {
     }
   }
 
-  // const updateCartAction = (e) => {
-  //   console.log("updateAction--->", e)
-  //   setCartChange(Math.random())
-  // }
-
-
-
-  
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     const cartId = localStorage.getItem('CART_ID')
