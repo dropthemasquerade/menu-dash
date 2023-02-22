@@ -13,7 +13,9 @@ import Chip from '@mui/material/Chip';
 import CircularProgress from '@mui/material/CircularProgress';
 import Person2Icon from '@mui/icons-material/Person2';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
-  
+import LinearProgress from '@mui/material/LinearProgress';
+import OpenTables from "./Tables"; 
+
 function padTo2Digits(num) {
     return num.toString().padStart(2, '0');
   }
@@ -56,11 +58,12 @@ function TopBar() {
                 <Chip icon={<Diversity3Icon color={"error"} />} label="晚班" sx={{display: {color: "white"}}} />
                 </Grid>
 
-                <Grid xs={6}>
+                <Grid xs={5}>
                     <Chip icon={<AddLocationIcon color={"action"} />} label="黄李记站前路店" sx={{display: {color: "white"}}} />
                 </Grid>
 
-                <Grid xs={5}>
+                <Grid xs={6}>
+                    <Chip icon={<OpenTables /> } label="" />
                 </Grid>
                 <Grid xs={3}>
                     <Chip icon={ <StoreStatus />} label="入座率" sx={{display: {color: "white"}}} />
