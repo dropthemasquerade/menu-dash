@@ -19,6 +19,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import GrainIcon from '@mui/icons-material/Grain';
 import MessageIcon from '@mui/icons-material/Message';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
+import MenuBox from "../../Components/MenuBox";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#252837', // : '#fff',
@@ -110,7 +111,8 @@ function SeatsShow() {
         //     </div>
         // </>
         <Box sx={{ flexGrow: 1 }}>
-            <TopBar/>
+            <TopBar />
+            <MenuBox/>
       </Box>
     );
 

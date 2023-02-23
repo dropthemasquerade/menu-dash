@@ -15,6 +15,9 @@ import Person2Icon from '@mui/icons-material/Person2';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import LinearProgress from '@mui/material/LinearProgress';
 import OpenTables from "./Tables"; 
+import Switch from '@mui/material/Switch';
+
+const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 function padTo2Digits(num) {
     return num.toString().padStart(2, '0');
@@ -47,7 +50,7 @@ function TopBar() {
 
     return (
         <Paper elevation={1} sx={{ background: '#252837', color: 'white' }}>
-            <Grid container columns={30} >
+            <Grid container columns={36} >
                 <Grid xs={3}>
                     <Chip icon={<GrainIcon color={"success"} />} label="云在线" sx={{display: {color: "white"}}} />
                 </Grid>
@@ -61,17 +64,20 @@ function TopBar() {
                 <Grid xs={5}>
                     <Chip icon={<AddLocationIcon color={"action"} />} label="黄李记站前路店" sx={{display: {color: "white"}}} />
                 </Grid>
+                <Grid xs={3}>
+                    <Switch {...label} defaultChecked />
+                </Grid>
 
                 <Grid xs={6}>
                     <Chip icon={<OpenTables /> } label="" />
                 </Grid>
-                <Grid xs={3}>
+                <Grid xs={5}>
                     <Chip icon={ <StoreStatus />} label="入座率" sx={{display: {color: "white"}}} />
                 </Grid>
                 <Grid xs={3}>
                     <Chip icon={<SimpleBadge color={"info"} />} label="消息" sx={{display: {color: "white"}}} />
                 </Grid>
-                <Grid xs={4}>
+                <Grid xs={5}>
                     <Chip icon={<AccessTimeIcon color={"primary"} />} label={currentTime} sx={{display: {color: "white"}}} />
                 </Grid>
 
