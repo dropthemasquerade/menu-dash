@@ -5,6 +5,8 @@ import ResponsiveGrid from "./MenuOrder";
 import Paper from '@mui/material/Paper';
 import ControlledOpenSpeedDial from "./PayBox";
 import FaCategory from './FaCategory';
+import SpanningTable from "./OrderBox";
+
 export default function MenuBox() {
   return (
     <Box
@@ -13,8 +15,6 @@ export default function MenuBox() {
             display: 'flex',
             flexDirection: 'column',
               '& > *': {
-            marginTop: 2,
-            marginBottom: 2,
             },
             '& .MuiBadge-root': {
             marginRight: 4,
@@ -25,13 +25,18 @@ export default function MenuBox() {
             <Grid container spacing={1}>
                   <Grid xs={6} md={9}>
                   {/* <FaCategory/> */}
-                    <Paper elevation={3} style={{maxHeight: 750, overflow: 'auto'}}>
+                    <Paper elevation={3} style={{maxHeight: 760, overflow: 'auto'}}>
                         <ResponsiveGrid/>
                     </Paper>
                  </Grid>
-                <Grid xs={6} md={3}>
+                  <Grid xs={6} md={3}>
+                      <Paper elevation={3} style={{ maxHeight: 560, overflow: 'auto', background: 'white' }}>
+                          <SpanningTable/>
+                    </Paper>
+                  </Grid>
+                  <Grid xs={6} md={3}>
+                    <ControlledOpenSpeedDial/>
                 </Grid>
-                <ControlledOpenSpeedDial/>
             </Grid>
         </Box>
     </Box>

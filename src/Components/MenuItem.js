@@ -14,6 +14,9 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import Rating from '@mui/material/Rating';
+import CheckboxLabels from "./Options";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -34,41 +37,34 @@ export default function FoodCard() {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 325 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
             R
           </Avatar>
         }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
             title="二两螺蛳粉"
-            subheader="库存: 12 价格: 23.9"
+            subheader="库存:12 价格:23.9"
       />
       <CardMedia
         component="img"
-        height="194"
+        height="164"
         image="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg"
         alt="Paella dish"
       />
       <CardContent>
             <Typography variant="body2" color="text.secondary">
-          销量: 129  
+                销量: 129  
               </Typography>
-        <Typography variant="body2" color="text.secondary">
-          评价: 4  
-        </Typography>
+              <Rating name="read-only" value={2} readOnly />
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
         <IconButton aria-label="share">
-          <ShareIcon />
+            <AddShoppingCartIcon />
         </IconButton>
         <ExpandMore
           expand={expanded}
@@ -80,10 +76,8 @@ export default function FoodCard() {
         </ExpandMore>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
-          </Typography>
+              <CardContent>
+                  <CheckboxLabels/>
         </CardContent>
       </Collapse>
     </Card>
