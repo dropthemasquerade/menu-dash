@@ -27,9 +27,15 @@ function subtotal(items) {
 }
 
 const rows = [
-  createRow('Paperclips (Box)', 100, 1.15),
-  createRow('Paper (Case)', 10, 45.99),
-  createRow('Waste Basket', 2, 17.99),
+  createRow('二两螺蛳粉', 100, 1.15),
+  createRow('鸡腿', 10, 45.99),
+    createRow('三两面', 2, 17.99),
+    createRow('木薯羹', 10, 45.99),
+    createRow('青菜', 2, 17.99),
+    createRow('鸡腿2', 10, 45.99),
+    createRow('三两面2', 2, 17.99),
+    createRow('木薯羹2', 10, 45.99),
+  createRow('青菜3', 2, 17.99),
 ];
 
 const invoiceSubtotal = subtotal(rows);
@@ -38,8 +44,10 @@ const invoiceTotal = invoiceTaxes + invoiceSubtotal;
 
 export default function SpanningTable() {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 320 }} aria-label="spanning table">
+    <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+      <TableContainer sx={{ maxHeight: 440 }}>
+              <Table stickyHeader
+                  sx={{ minWidth: 360, maxHeight: 300, overflow: "scroll" }} aria-label="spanning table">
         <TableHead>
           <TableRow>
             <TableCell>品项</TableCell>
@@ -73,7 +81,8 @@ export default function SpanningTable() {
             <TableCell align="right">{ccyFormat(invoiceTotal)}</TableCell>
           </TableRow>
         </TableBody>
-      </Table>
-    </TableContainer>
+        </Table>
+        </TableContainer>
+    </Paper>
   );
 }

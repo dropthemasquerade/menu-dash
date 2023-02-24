@@ -9,13 +9,20 @@ import Chat from "./Components/Chat";
 import Modal from "./Components/Modal";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SeatsShow from "./pages/Seats";
+import { createTheme, styled, ThemeProvider } from '@mui/material/styles'
+
 
 function App() {
+  const theme = createTheme({
+    palette: {
+        type: "dark"
+    }
+  })
+  
   return (
-    <>
-      <div className="App">
-
-        <Router>
+    <ThemeProvider theme={theme}>
+    <div className="App">
+      <Router>
           <SideBar />
           <Routes>
             <Route path="/" element={<Menu />} />
@@ -27,9 +34,9 @@ function App() {
             <Route path="/modal" element={<Modal />} />
             <Route path="/update/:id" element={<Modal />} />
           </Routes>
-        </Router>
+      </Router>
       </div>
-    </>
+      </ThemeProvider>
   );
 }
 

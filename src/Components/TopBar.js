@@ -40,7 +40,7 @@ function formatDate(date) {
 }
 
 
-function TopBar() {
+function TopBar({themeCheckMode, themeChange}) {
     let [currentTime, changeTime] = React.useState(formatDate(new Date()));
 
     function checkTime() {
@@ -65,7 +65,7 @@ function TopBar() {
                     <Chip icon={<AddLocationIcon color={"action"} />} label="黄李记站前路店" sx={{display: {color: "white"}}} />
                 </Grid>
                 <Grid xs={3}>
-                    <Switch {...label} defaultChecked />
+                    <Switch {...label} defaultChecked checked={themeCheckMode } onChange={themeChange} />
                 </Grid>
 
                 <Grid xs={6}>
