@@ -3,21 +3,16 @@ import React from "react";
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
 import SimpleBadge from "./Message";
-import WarningBadge from "./WarningBadge";
 import GrainIcon from '@mui/icons-material/Grain';
-import MessageIcon from '@mui/icons-material/Message';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import StoreStatus from "./StoreStatus";
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import Chip from '@mui/material/Chip';
-import CircularProgress from '@mui/material/CircularProgress';
 import Person2Icon from '@mui/icons-material/Person2';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
-import LinearProgress from '@mui/material/LinearProgress';
 import OpenTables from "./Tables"; 
 import { styled } from '@mui/material/styles';
 import Switch from '@mui/material/Switch';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
@@ -133,9 +128,6 @@ function TopBar({themeCheckMode, themeChange}) {
                 <Grid xs={5}>
                     <Chip icon={<AccessTimeIcon color={"primary"} />} label={currentTime} sx={{display: {color: "white"}}} />
                 </Grid>
-
-
-
             </Grid>
         </Paper>
     )
